@@ -24,7 +24,7 @@ export default function Navigation() {
     <header className="fixed inset-x-0 top-0 z-50">
       {announcementOpen && (
         <div className="relative flex items-center justify-center gap-3 bg-zing-yellow px-10 py-2.5 text-center">
-          <p className="font-body text-[0.58rem] font-semibold uppercase tracking-widest2 text-bark sm:text-[0.65rem]">
+          <p className="font-body text-[0.68rem] font-semibold text-bark sm:text-[0.78rem]">
             {announcement.text}{' '}
             <Link href={announcement.cta.href} className="underline underline-offset-2 hover:no-underline">
               {announcement.cta.label}
