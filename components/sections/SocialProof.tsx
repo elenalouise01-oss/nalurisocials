@@ -21,7 +21,7 @@ function TestimonialCard({
 }) {
   return (
     <div
-      className={`flex h-[26rem] w-[85vw] flex-none snap-center flex-col justify-between rounded-2xl p-8 sm:h-[30rem] sm:w-[38vw] sm:p-10 lg:w-[26vw] ${tone}`}
+      className={`flex h-[26rem] w-[88vw] flex-none snap-center flex-col justify-between rounded-2xl p-8 sm:h-[32rem] sm:w-[46vw] sm:p-10 lg:w-[34vw] ${tone}`}
     >
       <p className="font-display text-xl italic leading-snug sm:text-2xl">&quot;{testimonial.quote}&quot;</p>
       <div>
@@ -83,7 +83,7 @@ export default function SocialProof() {
       <ScrollReveal delay={0.14} className="mt-14 sm:mt-16">
         <div
           ref={trackRef}
-          className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-2 no-scrollbar sm:px-10 lg:px-16"
+          className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 no-scrollbar"
         >
           {testimonials.map((testimonial, i) => (
             <div key={testimonial.name + i} data-card>
