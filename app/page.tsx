@@ -2,6 +2,7 @@ import About from '@/components/sections/About';
 import BigIdea from '@/components/sections/BigIdea';
 import ComingSoon from '@/components/sections/ComingSoon';
 import FinalCta from '@/components/sections/FinalCta';
+import FollowUs from '@/components/sections/FollowUs';
 import Hero from '@/components/sections/Hero';
 import HowWeWork from '@/components/sections/HowWeWork';
 import ImageGallery from '@/components/sections/ImageGallery';
@@ -34,6 +35,7 @@ export default function Home() {
         <SocialProof />
         <ComingSoon />
         <FinalCta />
+        <FollowUs />
       </main>
       <Footer />
     </>

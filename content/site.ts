@@ -273,7 +273,20 @@ export const comingSoon = {
   note: 'Not available yet — this is what’s brewing.',
 };
 
+export const followUs = {
+  label: "Let's Stay Connected",
+  headline: 'Follow Along',
+  items: [
+    { title: 'Behind the scenes of building a voice.', badge: '@naluri.socials', tone: 'sage' },
+    { title: 'Real content, not a performance.', badge: '@naluri.socials', tone: 'rose' },
+    { title: 'Systems that keep you consistent.', badge: '@naluri.socials', tone: 'porcelain' },
+    { title: 'Confidence, one post at a time.', badge: '@naluri.socials', tone: 'sand' },
+    { title: 'What working together actually looks like.', badge: '@naluri.socials', tone: 'bark' },
+  ],
+} as const;
+
 export const footer = {
+  label: 'Stay in the loop',
   tagline: 'You are the content.',
   ctaLabel: 'Ready to talk?',
   cta: 'Apply Now',

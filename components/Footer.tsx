@@ -18,7 +18,8 @@ const socialIcons: Record<string, React.ReactNode> = {
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-porcelain">
-      <div className="container-editorial flex flex-col items-center gap-9 pt-24 text-center sm:gap-10 sm:pt-32">
+      <div className="container-editorial flex flex-col items-center gap-5 pt-24 text-center sm:gap-6 sm:pt-32">
+        <p className="font-body text-[0.7rem] font-semibold uppercase tracking-widest2 text-sage">{footer.label}</p>
         <h2 className="max-w-2xl font-display text-3xl italic leading-tight text-bark sm:text-5xl">
           {footer.tagline}
         </h2>
@@ -34,14 +35,20 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative mt-16 select-none overflow-hidden sm:mt-20">
-        <p
-          aria-hidden
-          className="-mx-1 font-logo lowercase leading-none text-bark"
-          style={{ fontSize: 'clamp(6rem, 24vw, 18rem)' }}
-        >
-          {nav.logo}
-        </p>
+      <div className="relative mt-16 w-full select-none sm:mt-20" aria-hidden>
+        <svg viewBox="0 0 1000 190" className="block w-full text-bark">
+          <text
+            x="0"
+            y="165"
+            textLength="1000"
+            lengthAdjust="spacingAndGlyphs"
+            fontSize="220"
+            className="font-logo lowercase"
+            fill="currentColor"
+          >
+            {nav.logo}
+          </text>
+        </svg>
       </div>
 
       <div className="container-editorial flex flex-col items-center justify-between gap-3 border-t border-bark/10 py-6 sm:flex-row">
