@@ -281,10 +281,5 @@ export const footer = {
     { label: 'Instagram', href: 'https://instagram.com' },
     { label: 'TikTok', href: 'https://tiktok.com' },
   ],
-  links: [
-    { label: 'Work With Me', href: '#work-with-me' },
-    { label: 'About', href: '#about' },
-    { label: 'Coming Soon', href: '#coming-soon' },
-  ],
   legal: `© ${new Date().getFullYear()} Naluri Socials. All rights reserved.`,
 };
