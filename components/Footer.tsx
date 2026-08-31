@@ -35,20 +35,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative mt-16 w-full select-none sm:mt-20" aria-hidden>
-        <svg viewBox="0 0 1000 190" className="block w-full text-bark">
-          <text
-            x="0"
-            y="165"
-            textLength="1000"
-            lengthAdjust="spacingAndGlyphs"
-            fontSize="220"
-            className="font-logo lowercase"
-            fill="currentColor"
-          >
-            {nav.logo}
-          </text>
-        </svg>
+      <div className="relative mt-16 w-full select-none overflow-hidden text-center sm:mt-20" aria-hidden>
+        <p
+          className="font-logo lowercase leading-none text-bark"
+          style={{ fontSize: 'clamp(6rem, 26vw, 20rem)' }}
+        >
+          {nav.logo}
+        </p>
       </div>
 
       <div className="container-editorial flex flex-col items-center justify-between gap-3 border-t border-bark/10 py-6 sm:flex-row">
