@@ -34,6 +34,7 @@ export default function Hero() {
               playsInline
               preload="auto"
             >
+              <source src={hero.videoSrc.replace(/\.mp4$/, '.webm')} type="video/webm" />
               <source src={hero.videoSrc} type="video/mp4" />
             </video>
           ) : (

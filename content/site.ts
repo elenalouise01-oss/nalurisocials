@@ -29,7 +29,7 @@ export const hero = {
   marquee: ['Voice', 'Confidence', 'Consistency', 'Freedom', 'Clarity'],
   // Drop an .mp4 at public/videos/hero.mp4 and set this to '/videos/hero.mp4'
   // to swap the placeholder for a full-bleed background video.
-  videoSrc: null as string | null,
+  videoSrc: '/videos/hero.mp4' as string | null,
 };
 
 export const problem = {
