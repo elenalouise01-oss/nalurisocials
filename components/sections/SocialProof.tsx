@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef } from 'react';
-import PlaceholderImage from '@/components/PlaceholderImage';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionLabel from '@/components/SectionLabel';
 import { testimonials } from '@/content/site';
@@ -22,21 +21,14 @@ function TestimonialCard({
 }) {
   return (
     <div
-      className={`flex w-[85vw] max-w-sm flex-none snap-center flex-col justify-between gap-10 rounded-2xl p-8 sm:w-96 sm:p-10 ${tone}`}
+      className={`flex h-[26rem] w-[85vw] flex-none snap-center flex-col justify-between rounded-2xl p-8 sm:h-[30rem] sm:w-[38vw] sm:p-10 lg:w-[26vw] ${tone}`}
     >
-      <p className="font-display text-xl italic leading-snug sm:text-2xl">“{testimonial.quote}”</p>
+      <p className="font-display text-xl italic leading-snug sm:text-2xl">&quot;{testimonial.quote}&quot;</p>
       <div>
-        <div className="flex items-center gap-3">
-          <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
-            <PlaceholderImage alt={`${testimonial.name} portrait placeholder`} tone="porcelain" className="h-full w-full" compact />
-          </div>
-          <div>
-            <p className="font-display text-base">{testimonial.name}</p>
-            <p className="font-body text-xs uppercase tracking-widest2 opacity-60">{testimonial.role}</p>
-          </div>
-        </div>
+        <p className="font-display text-base font-semibold">{testimonial.name}</p>
+        <p className="font-body text-xs uppercase tracking-widest2 opacity-60">{testimonial.role}</p>
         {testimonial.placeholder && (
-          <p className="mt-4 font-body text-[0.62rem] font-semibold uppercase tracking-widest2 opacity-50">
+          <p className="mt-3 font-body text-[0.62rem] font-semibold uppercase tracking-widest2 opacity-50">
             Placeholder — swap for a real testimonial
           </p>
         )}
@@ -58,19 +50,17 @@ export default function SocialProof() {
 
   return (
     <section className="relative overflow-hidden bg-bark py-24 text-cream sm:py-32">
-      <div className="container-editorial flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <SectionLabel numeral="✦" tone="cream">
-            What Clients Say
-          </SectionLabel>
-          <ScrollReveal delay={0.06}>
-            <p className="mt-6 max-w-2xl font-display text-2xl italic leading-snug text-cream sm:text-3xl lg:text-4xl">
-              It looks like content that finally sounds like the person behind it.
-            </p>
-          </ScrollReveal>
-        </div>
+      <div className="container-editorial flex flex-col items-center text-center">
+        <SectionLabel numeral="✦" tone="cream">
+          What Clients Say
+        </SectionLabel>
+        <ScrollReveal delay={0.06}>
+          <p className="mx-auto mt-6 max-w-2xl font-display text-2xl italic leading-snug text-cream sm:text-3xl lg:text-4xl">
+            It looks like content that finally sounds like the person behind it.
+          </p>
+        </ScrollReveal>
 
-        <div className="hidden shrink-0 items-center gap-3 sm:flex">
+        <div className="mt-8 flex items-center gap-3">
           <button
             type="button"
             onClick={() => scrollByCard(-1)}
@@ -91,7 +81,10 @@ export default function SocialProof() {
       </div>
 
       <ScrollReveal delay={0.14} className="mt-14 sm:mt-16">
-        <div ref={trackRef} className="container-editorial flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 no-scrollbar">
+        <div
+          ref={trackRef}
+          className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-2 no-scrollbar sm:px-10 lg:px-16"
+        >
           {testimonials.map((testimonial, i) => (
             <div key={testimonial.name + i} data-card>
               <TestimonialCard testimonial={testimonial} tone={cardTones[i % cardTones.length]} />

@@ -25,7 +25,7 @@ export const hero = {
 
 export const problem = {
   label: 'The Cringe Cycle',
-  headline: 'You know social media matters. So why does posting still feel like this?',
+  headline: 'Social media matters. So why does posting feel like this?',
   intro: [
     'You know your business needs visibility.',
     'You know social media matters.',
