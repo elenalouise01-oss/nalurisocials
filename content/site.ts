@@ -14,7 +14,7 @@ export const nav = {
 
 export const announcement = {
   enabled: true,
-  text: 'Applications are open for a limited number of 1:1 spots this season.',
+  text: 'Applications are open — let’s build a presence that actually feels like you.',
   cta: { label: 'Apply Now', href: '#apply' },
 };
 

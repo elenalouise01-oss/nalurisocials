@@ -49,7 +49,7 @@ export default function Hero() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-bark/70 via-bark/15 to-bark/40" />
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pt-[16vh] text-center sm:pt-[20vh]">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,11 +86,7 @@ export default function Hero() {
             <Button href="#apply" variant="pastel" tone="yellow">
               {hero.ctaPrimary}
             </Button>
-            <Button
-              href="#work-with-me"
-              variant="secondary"
-              className="!border-cream/40 !text-cream hover:!bg-cream hover:!text-bark"
-            >
+            <Button href="#work-with-me" variant="pastel" tone="sage">
               {hero.ctaSecondary}
             </Button>
           </motion.div>

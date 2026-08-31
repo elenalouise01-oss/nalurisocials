@@ -5,10 +5,9 @@ import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import { announcement, nav } from '@/content/site';
 
-const logoClasses =
-  'font-logo shrink-0 rounded-full bg-cream px-4 py-2 text-lg lowercase tracking-wide text-rose sm:text-xl';
+const logoClasses = 'font-logo shrink-0 pl-1.5 text-xl font-black lowercase tracking-wide text-cream sm:text-2xl';
 const ctaClasses =
-  'shrink-0 rounded-full bg-zing-yellow px-5 py-2.5 font-body text-[0.68rem] font-semibold uppercase tracking-widest2 text-bark transition-colors duration-300 hover:bg-cream sm:px-6 sm:text-[0.7rem]';
+  'shrink-0 rounded-full bg-zing-yellow px-4 py-2 font-body text-[0.62rem] font-semibold uppercase tracking-widest2 text-bark transition-colors duration-300 hover:bg-cream sm:px-5 sm:text-[0.65rem]';
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
@@ -25,7 +24,7 @@ export default function Navigation() {
     <header className="fixed inset-x-0 top-0 z-50">
       {announcementOpen && (
         <div className="relative flex items-center justify-center gap-3 bg-zing-yellow px-10 py-2.5 text-center">
-          <p className="font-body text-[0.7rem] font-semibold uppercase tracking-widest2 text-bark sm:text-xs">
+          <p className="font-body text-[0.58rem] font-semibold uppercase tracking-widest2 text-bark sm:text-[0.65rem]">
             {announcement.text}{' '}
             <Link href={announcement.cta.href} className="underline underline-offset-2 hover:no-underline">
               {announcement.cta.label}
@@ -42,7 +41,7 @@ export default function Navigation() {
         </div>
       )}
       <div className="container-editorial flex justify-center pt-4 sm:pt-6">
-        <div className="w-full max-w-3xl rounded-full bg-bark/95 py-2 pl-2 pr-2 shadow-[0_8px_30px_rgba(59,45,14,0.25)] backdrop-blur-md sm:pl-3">
+        <div className="w-full max-w-2xl rounded-full bg-bark/95 py-1.5 pl-2 pr-1.5 shadow-[0_8px_30px_rgba(59,45,14,0.25)] backdrop-blur-md sm:pl-3">
           {/* Mobile: hamburger — centered logo — CTA */}
           <div className="grid grid-cols-3 items-center md:hidden">
             <button
@@ -75,12 +74,12 @@ export default function Navigation() {
               {nav.logo}
             </Link>
 
-            <nav className="flex items-center gap-7">
+            <nav className="flex items-center gap-5">
               {nav.links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-body text-[0.72rem] font-semibold uppercase tracking-widest2 text-cream/85 transition-colors hover:text-zing-yellow"
+                  className="font-body text-[0.64rem] font-semibold uppercase tracking-widest2 text-cream/85 transition-colors hover:text-zing-yellow"
                 >
                   {link.label}
                 </Link>
