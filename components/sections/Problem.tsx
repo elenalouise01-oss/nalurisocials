@@ -1,12 +1,17 @@
+import Marquee from '@/components/Marquee';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionLabel from '@/components/SectionLabel';
-import { problem } from '@/content/site';
+import { hero, problem } from '@/content/site';
 import { staggerChildren, fadeUp } from '@/lib/motion';
 
 export default function Problem() {
   return (
-    <section className="relative overflow-hidden bg-porcelain py-24 sm:py-32">
-      <div className="container-editorial">
+    <section className="relative overflow-hidden bg-porcelain">
+      <div className="border-b border-bark/10 py-4">
+        <Marquee items={hero.marquee} textClassName="font-display italic text-3xl text-bark/25 sm:text-4xl" />
+      </div>
+
+      <div className="container-editorial py-24 sm:py-32">
         <SectionLabel numeral="✦">The Problem</SectionLabel>
 
         <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-12">

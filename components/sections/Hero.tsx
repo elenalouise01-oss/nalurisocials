@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Button from '@/components/Button';
-import Marquee from '@/components/Marquee';
 import PlaceholderImage from '@/components/PlaceholderImage';
 import { hero } from '@/content/site';
 import { EASE } from '@/lib/motion';
@@ -21,84 +20,76 @@ export default function Hero() {
   });
 
   return (
-    <section id="top" className="relative overflow-hidden bg-cream pt-28 sm:pt-32">
-      <div className="pointer-events-none absolute -right-24 top-16 h-64 w-64 rounded-full bg-rose/25 blur-3xl sm:h-96 sm:w-96" aria-hidden />
-      <div className="pointer-events-none absolute -left-16 bottom-0 h-48 w-48 rounded-full bg-sage/15 blur-3xl" aria-hidden />
+    <section id="top" className="relative">
+      {/* Pinned full-bleed photo — stays in place while the next section's
+          solid background scrolls up over it. */}
+      <div className="fixed inset-0 -z-10 h-screen w-full">
+        <PlaceholderImage
+          alt="Elena filming content — behind the scenes"
+          label="Hero editorial image — full-bleed"
+          tone="sage"
+          className="h-full w-full"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-bark/70 via-bark/15 to-bark/40" />
 
-      <div className="container-editorial relative">
-        <motion.p
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={t(0.7)}
-          className="font-body text-[0.72rem] font-semibold uppercase tracking-widest2 text-sage"
-        >
-          {hero.eyebrow}
-        </motion.p>
+        <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={t(0.7)}
+            className="font-body text-[0.72rem] font-semibold uppercase tracking-widest2 text-cream/80"
+          >
+            {hero.eyebrow}
+          </motion.p>
 
-        <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-end lg:gap-4">
           <motion.h1
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={t(0.85, 0.08)}
-            className="col-span-12 font-display text-display-1 text-bark lg:col-span-9"
+            className="mt-5 max-w-5xl font-display text-display-1 uppercase leading-[0.92] text-cream"
           >
-            {hero.headlineLines[0]}
-            <br />
-            <span className="italic text-sage">{hero.headlineLines[1]}</span>
+            {hero.headlineLines[0]} {hero.headlineLines[1]}
           </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={t(0.7, 0.3)}
-            className="col-span-12 flex flex-col gap-6 lg:col-span-3 lg:pb-4"
+            className="mt-6 max-w-xl font-body text-base leading-relaxed text-cream/85 sm:text-lg"
           >
-            <p className="max-w-sm font-body text-base leading-relaxed text-bark/75 sm:text-lg">{hero.sub}</p>
-          </motion.div>
-        </div>
+            {hero.sub}
+          </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={t(0.7, 0.42)}
-          className="mt-10 grid grid-cols-1 gap-8 border-t border-bark/10 pt-8 sm:grid-cols-[1fr_auto] sm:items-center"
-        >
-          <p className="max-w-md font-body text-sm text-bark/60 sm:text-[0.95rem]">{hero.audience}</p>
-          <div className="flex flex-wrap items-center gap-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={t(0.7, 0.42)}
+            className="mt-9 flex flex-wrap items-center justify-center gap-4"
+          >
             <Button href="#apply">{hero.ctaPrimary}</Button>
-            <Button href="#work-with-me" variant="ghost">
+            <Button
+              href="#work-with-me"
+              variant="secondary"
+              className="!border-cream/40 !text-cream hover:!bg-cream hover:!text-bark"
+            >
               {hero.ctaSecondary}
             </Button>
-          </div>
-        </motion.div>
+          </motion.div>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={t(0.7, 0.55)}
+            className="mt-8 max-w-sm font-body text-xs text-cream/60 sm:text-sm"
+          >
+            {hero.audience}
+          </motion.p>
+        </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={t(1, 0.6)}
-        className="relative mt-16 grid grid-cols-1 gap-0 sm:mt-20 lg:grid-cols-12"
-      >
-        <div className="relative col-span-12 aspect-[16/10] overflow-hidden sm:aspect-[21/9] lg:col-span-8 lg:col-start-1">
-          <PlaceholderImage
-            alt="Elena filming content — behind the scenes"
-            label="Hero editorial image"
-            tone="porcelain"
-            className="h-full w-full"
-            priority
-          />
-        </div>
-        <div className="relative col-span-12 hidden aspect-square overflow-hidden lg:col-span-4 lg:block">
-          <PlaceholderImage alt="Naluri content details" label="Detail shot" tone="sage" className="h-full w-full" />
-        </div>
-      </motion.div>
-
-      <div className="mt-12 border-y border-bark/10 bg-cream py-4 sm:mt-16">
-        <Marquee
-          items={hero.marquee}
-          textClassName="font-display italic text-3xl text-bark/25 sm:text-4xl"
-        />
-      </div>
+      {/* Spacer reserving the pinned photo's height in normal document flow. */}
+      <div className="h-screen w-full" aria-hidden />
     </section>
   );
 }
