@@ -48,7 +48,7 @@ export default function Hero() {
             />
           )}
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-bark/45 via-bark/10 to-bark/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bark/15 to-transparent" />
 
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pt-[16vh] text-center sm:pt-[20vh]">
           <motion.p
