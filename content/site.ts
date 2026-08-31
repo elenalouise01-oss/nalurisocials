@@ -22,8 +22,6 @@ export const hero = {
   eyebrow: 'Social media & content, built around you',
   headlineLines: ['Live Freely,', 'Create Confidently'],
   sub: 'Turn your story into content that connects — without chasing trends, burning out, or becoming a full-time influencer.',
-  audience:
-    'For entrepreneurs & personal brands who know they need to show up online… but don’t want social media to run their life.',
   ctaPrimary: 'Apply Now',
   ctaSecondary: 'Explore',
   marquee: ['Voice', 'Confidence', 'Consistency', 'Freedom', 'Clarity'],

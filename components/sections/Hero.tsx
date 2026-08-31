@@ -91,15 +91,6 @@ export default function Hero() {
               {hero.ctaSecondary}
             </Button>
           </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={t(0.7, 0.55)}
-            className="mt-8 max-w-sm font-body text-xs text-cream/60 sm:text-sm"
-          >
-            {hero.audience}
-          </motion.p>
         </div>
       </div>
 
