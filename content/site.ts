@@ -12,6 +12,12 @@ export const nav = {
   cta: 'Apply Now',
 };
 
+export const announcement = {
+  enabled: true,
+  text: 'Applications are open for a limited number of 1:1 spots this season.',
+  cta: { label: 'Apply Now', href: '#apply' },
+};
+
 export const hero = {
   eyebrow: 'Social media & content, built around you',
   headlineLines: ['Live Freely,', 'Create Confidently'],
@@ -21,6 +27,9 @@ export const hero = {
   ctaPrimary: 'Apply Now',
   ctaSecondary: 'Explore the Work',
   marquee: ['Voice', 'Confidence', 'Consistency', 'Freedom', 'Clarity'],
+  // Drop an .mp4 at public/videos/hero.mp4 and set this to '/videos/hero.mp4'
+  // to swap the placeholder for a full-bleed background video.
+  videoSrc: null as string | null,
 };
 
 export const problem = {

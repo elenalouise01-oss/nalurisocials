@@ -21,17 +21,31 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative">
-      {/* Pinned full-bleed photo — stays in place while the next section's
+      {/* Pinned full-bleed photo/video — stays in place while the next section's
           solid background scrolls up over it. */}
       <div className="fixed inset-0 -z-10 h-screen w-full">
         <div className="absolute inset-0">
-          <PlaceholderImage
-            alt="Elena filming content — behind the scenes"
-            label="Hero editorial image — full-bleed"
-            tone="sage"
-            className="h-full w-full"
-            priority
-          />
+          {hero.videoSrc ? (
+            <video
+              className="h-full w-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            >
+              <source src={hero.videoSrc} type="video/mp4" />
+            </video>
+          ) : (
+            <PlaceholderImage
+              alt="Elena filming content — behind the scenes"
+              label="Hero editorial image — full-bleed"
+              tone="sage"
+              className="h-full w-full"
+              priority
+              compact
+            />
+          )}
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-bark/70 via-bark/15 to-bark/40" />
 
@@ -49,7 +63,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={t(0.85, 0.08)}
-            className="mt-5 max-w-5xl font-body text-display-1 font-black uppercase leading-[0.88] tracking-tight text-cream"
+            className="mt-6 max-w-3xl font-body text-display-2 font-black uppercase leading-[0.95] tracking-tight text-cream"
           >
             {hero.headlineLines[0]} {hero.headlineLines[1]}
           </motion.h1>
@@ -58,7 +72,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={t(0.7, 0.3)}
-            className="mt-6 max-w-xl font-body text-base leading-relaxed text-cream/85 sm:text-lg"
+            className="mt-7 max-w-xl font-body text-base leading-relaxed text-cream/85 sm:text-lg"
           >
             {hero.sub}
           </motion.p>

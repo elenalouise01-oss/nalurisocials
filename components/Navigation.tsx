@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
-import { nav } from '@/content/site';
+import { announcement, nav } from '@/content/site';
 
 const logoClasses =
   'font-logo shrink-0 rounded-full bg-cream px-4 py-2 text-lg lowercase tracking-wide text-rose sm:text-xl';
@@ -12,6 +12,7 @@ const ctaClasses =
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const [announcementOpen, setAnnouncementOpen] = useState(announcement.enabled);
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -22,8 +23,26 @@ export default function Navigation() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
+      {announcementOpen && (
+        <div className="relative flex items-center justify-center gap-3 bg-zing-yellow px-10 py-2.5 text-center">
+          <p className="font-body text-[0.7rem] font-semibold uppercase tracking-widest2 text-bark sm:text-xs">
+            {announcement.text}{' '}
+            <Link href={announcement.cta.href} className="underline underline-offset-2 hover:no-underline">
+              {announcement.cta.label}
+            </Link>
+          </p>
+          <button
+            type="button"
+            onClick={() => setAnnouncementOpen(false)}
+            aria-label="Dismiss announcement"
+            className="absolute right-3 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center text-bark/70 transition-colors hover:text-bark"
+          >
+            ✕
+          </button>
+        </div>
+      )}
       <div className="container-editorial flex justify-center pt-4 sm:pt-6">
-        <div className="w-full max-w-4xl rounded-full bg-bark/95 py-2 pl-2 pr-2 shadow-[0_8px_30px_rgba(59,45,14,0.25)] backdrop-blur-md sm:pl-3">
+        <div className="w-full max-w-3xl rounded-full bg-bark/95 py-2 pl-2 pr-2 shadow-[0_8px_30px_rgba(59,45,14,0.25)] backdrop-blur-md sm:pl-3">
           {/* Mobile: hamburger — centered logo — CTA */}
           <div className="grid grid-cols-3 items-center md:hidden">
             <button
