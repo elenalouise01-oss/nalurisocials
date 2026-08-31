@@ -11,7 +11,7 @@ export default function Outcome() {
 
         <div className="mt-8 flex flex-col gap-3">
           <ScrollReveal>
-            <h2 className="font-display text-display-2 leading-[0.98] text-bark/30 line-through decoration-rose decoration-2">
+            <h2 className="font-body text-display-2 font-black uppercase leading-[0.98] tracking-tight text-bark/25">
               {outcome.headline}
             </h2>
           </ScrollReveal>
