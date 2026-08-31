@@ -24,7 +24,7 @@ export default function HowWeWork() {
             tag={findVoice.tag}
             headline={findVoice.headline}
             includes={findVoice.includes}
-            imageTone="blush"
+            imageTone="porcelain"
           >
             <ScrollReveal delay={0.12} className="relative flex flex-col gap-2 border-l-2 border-rose/50 pl-5">
               <p className="font-body text-xs font-semibold uppercase tracking-widest2 text-bark/40">

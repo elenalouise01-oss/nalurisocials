@@ -22,7 +22,7 @@ export default function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden bg-cream pt-28 sm:pt-32">
-      <div className="pointer-events-none absolute -right-24 top-16 h-64 w-64 rounded-full bg-blush/60 blur-3xl sm:h-96 sm:w-96" aria-hidden />
+      <div className="pointer-events-none absolute -right-24 top-16 h-64 w-64 rounded-full bg-rose/25 blur-3xl sm:h-96 sm:w-96" aria-hidden />
       <div className="pointer-events-none absolute -left-16 bottom-0 h-48 w-48 rounded-full bg-sage/15 blur-3xl" aria-hidden />
 
       <div className="container-editorial relative">
@@ -83,7 +83,7 @@ export default function Hero() {
           <PlaceholderImage
             alt="Elena filming content — behind the scenes"
             label="Hero editorial image"
-            tone="blush"
+            tone="porcelain"
             className="h-full w-full"
             priority
           />

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-type Tone = 'blush' | 'sage' | 'porcelain' | 'rose' | 'bark';
+type Tone = 'sage' | 'porcelain' | 'rose' | 'bark' | 'sand';
 
 type PlaceholderImageProps = {
   src?: string;
@@ -14,26 +14,26 @@ type PlaceholderImageProps = {
 };
 
 const toneStyles: Record<Tone, string> = {
-  blush: 'from-blush via-porcelain to-sand',
   sage: 'from-sage/25 via-porcelain to-linen',
   porcelain: 'from-porcelain via-sand to-linen',
-  rose: 'from-rose/40 via-blush to-porcelain',
+  rose: 'from-rose/35 via-porcelain to-sand',
   bark: 'from-bark via-umber to-bark',
+  sand: 'from-sand via-linen to-porcelain',
 };
 
 const textTone: Record<Tone, string> = {
-  blush: 'text-bark/50',
   sage: 'text-bark/50',
   porcelain: 'text-bark/50',
   rose: 'text-bark/50',
   bark: 'text-cream/60',
+  sand: 'text-bark/50',
 };
 
 export default function PlaceholderImage({
   src,
   alt,
   label = 'Replace with your photography',
-  tone = 'blush',
+  tone = 'porcelain',
   className = '',
   priority = false,
   sizes = '(min-width: 1024px) 50vw, 100vw',

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import PlaceholderImage from '@/components/PlaceholderImage';
 import ScrollReveal from '@/components/ScrollReveal';
 
-type Tone = 'blush' | 'sage' | 'porcelain' | 'rose' | 'bark';
+type Tone = 'sage' | 'porcelain' | 'rose' | 'bark' | 'sand';
 
 type OfferChapterProps = {
   number: string;
@@ -20,7 +20,7 @@ export default function OfferChapter({
   headline,
   includes,
   reverse = false,
-  imageTone = 'blush',
+  imageTone = 'porcelain',
   children,
 }: OfferChapterProps) {
   return (
