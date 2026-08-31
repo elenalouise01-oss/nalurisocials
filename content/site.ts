@@ -25,7 +25,7 @@ export const hero = {
   audience:
     'For entrepreneurs & personal brands who know they need to show up online… but don’t want social media to run their life.',
   ctaPrimary: 'Apply Now',
-  ctaSecondary: 'Explore the Work',
+  ctaSecondary: 'Explore',
   marquee: ['Voice', 'Confidence', 'Consistency', 'Freedom', 'Clarity'],
   // Drop an .mp4 at public/videos/hero.mp4 and set this to '/videos/hero.mp4'
   // to swap the placeholder for a full-bleed background video.

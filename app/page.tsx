@@ -21,12 +21,12 @@ export default function Home() {
       <main>
         <Hero />
         <Problem />
+        <Inclusions />
         <BigIdea />
         <Transformation />
         <MainOffer />
         <HowWeWork />
         <QuoteBreak />
-        <Inclusions />
         <Outcome />
         <About />
         <SocialProof />
