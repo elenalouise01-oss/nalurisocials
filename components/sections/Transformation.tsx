@@ -8,7 +8,9 @@ export default function Transformation() {
       <div className="container-editorial">
         <SectionLabel numeral="✦">{transformation.label}</SectionLabel>
         <ScrollReveal>
-          <h2 className="mt-6 font-display text-display-2 text-bark">{transformation.headline}</h2>
+          <h2 className="mt-6 font-body text-display-2 font-black uppercase tracking-tight text-bark">
+            {transformation.headline}
+          </h2>
         </ScrollReveal>
 
         <div className="mt-16 divide-y divide-bark/10 border-t border-bark/10 sm:mt-20">
