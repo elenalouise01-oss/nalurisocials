@@ -5,6 +5,11 @@ import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import { nav } from '@/content/site';
 
+const logoClasses =
+  'font-logo shrink-0 rounded-full bg-cream px-4 py-2 text-lg lowercase tracking-wide text-rose sm:text-xl';
+const ctaClasses =
+  'shrink-0 rounded-full bg-zing-yellow px-5 py-2.5 font-body text-[0.68rem] font-semibold uppercase tracking-widest2 text-bark transition-colors duration-300 hover:bg-cream sm:px-6 sm:text-[0.7rem]';
+
 export default function Navigation() {
   const [open, setOpen] = useState(false);
 
@@ -18,47 +23,55 @@ export default function Navigation() {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="container-editorial flex justify-center pt-4 sm:pt-6">
-        <div className="flex w-full max-w-4xl items-center justify-between gap-4 rounded-full bg-bark/95 py-2 pl-2 pr-2 shadow-[0_8px_30px_rgba(59,45,14,0.25)] backdrop-blur-md sm:pl-3">
-          <Link
-            href="#top"
-            className="font-logo italic shrink-0 rounded-full bg-cream px-4 py-2 text-lg lowercase tracking-wide text-rose sm:text-xl"
-          >
-            {nav.logo}
-          </Link>
+        <div className="w-full max-w-4xl rounded-full bg-bark/95 py-2 pl-2 pr-2 shadow-[0_8px_30px_rgba(59,45,14,0.25)] backdrop-blur-md sm:pl-3">
+          {/* Mobile: hamburger — centered logo — CTA */}
+          <div className="grid grid-cols-3 items-center md:hidden">
+            <button
+              type="button"
+              onClick={() => setOpen((o) => !o)}
+              aria-expanded={open}
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              className="relative z-50 flex h-9 w-9 flex-col items-center justify-center justify-self-start gap-[5px]"
+            >
+              <span
+                className={`block h-px w-5 bg-cream transition-transform duration-300 ${open ? 'translate-y-[3px] rotate-45' : ''}`}
+              />
+              <span
+                className={`block h-px w-5 bg-cream transition-transform duration-300 ${open ? '-translate-y-[3px] -rotate-45' : ''}`}
+              />
+            </button>
 
-          <nav className="hidden items-center gap-7 md:flex">
-            {nav.links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="font-body text-[0.72rem] font-semibold uppercase tracking-widest2 text-cream/85 transition-colors hover:text-zing-yellow"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+            <Link href="#top" className={`${logoClasses} justify-self-center`}>
+              {nav.logo}
+            </Link>
 
-          <Link
-            href="#apply"
-            className="hidden shrink-0 rounded-full bg-zing-yellow px-6 py-2.5 font-body text-[0.7rem] font-semibold uppercase tracking-widest2 text-bark transition-colors duration-300 hover:bg-cream md:inline-block"
-          >
-            {nav.cta}
-          </Link>
+            <Link href="#apply" className={`${ctaClasses} justify-self-end`}>
+              {nav.cta}
+            </Link>
+          </div>
 
-          <button
-            type="button"
-            onClick={() => setOpen((o) => !o)}
-            aria-expanded={open}
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            className="relative z-50 flex h-9 w-9 shrink-0 flex-col items-center justify-center gap-[5px] md:hidden"
-          >
-            <span
-              className={`block h-px w-5 bg-cream transition-transform duration-300 ${open ? 'translate-y-[3px] rotate-45' : ''}`}
-            />
-            <span
-              className={`block h-px w-5 bg-cream transition-transform duration-300 ${open ? '-translate-y-[3px] -rotate-45' : ''}`}
-            />
-          </button>
+          {/* Desktop: logo — links — CTA */}
+          <div className="hidden items-center justify-between gap-4 md:flex">
+            <Link href="#top" className={logoClasses}>
+              {nav.logo}
+            </Link>
+
+            <nav className="flex items-center gap-7">
+              {nav.links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="font-body text-[0.72rem] font-semibold uppercase tracking-widest2 text-cream/85 transition-colors hover:text-zing-yellow"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+
+            <Link href="#apply" className={ctaClasses}>
+              {nav.cta}
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -82,13 +95,6 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="#apply"
-                onClick={() => setOpen(false)}
-                className="mt-1 inline-flex w-fit items-center rounded-full bg-zing-yellow px-6 py-2.5 font-body text-[0.7rem] font-semibold uppercase tracking-widest2 text-bark"
-              >
-                {nav.cta}
-              </Link>
             </nav>
           </motion.div>
         )}

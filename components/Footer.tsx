@@ -20,7 +20,7 @@ export default function Footer() {
 
         <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
           <div>
-            <p className="font-logo italic lowercase text-2xl text-rose">{nav.logo}</p>
+            <p className="font-logo lowercase text-2xl text-rose">{nav.logo}</p>
           </div>
           <div className="flex flex-col gap-3">
             <p className="font-body text-[0.65rem] font-semibold uppercase tracking-widest2 text-cream/50">Explore</p>
@@ -56,7 +56,7 @@ export default function Footer() {
       <div className="relative mt-4 select-none overflow-hidden">
         <p
           aria-hidden
-          className="font-logo italic lowercase leading-none text-cream"
+          className="font-logo lowercase leading-none text-cream"
           style={{ fontSize: 'clamp(5rem, 21vw, 15rem)' }}
         >
           {nav.logo}

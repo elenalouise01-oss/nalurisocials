@@ -17,7 +17,7 @@ const badgeTones = ['bg-zing-yellow text-bark', 'bg-sage text-cream', 'bg-rose t
 
 function Card({ item, index }: { item: CarouselItem; index: number }) {
   return (
-    <div className="relative aspect-[3/4] w-64 flex-none overflow-hidden rounded-2xl sm:w-80">
+    <div className="relative aspect-[3/4] w-[78vw] max-w-xs flex-none overflow-hidden rounded-2xl sm:w-80">
       <PlaceholderImage
         alt={item.title}
         label={item.title}

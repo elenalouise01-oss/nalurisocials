@@ -1,8 +1,8 @@
 'use client';
 
 import { motion, type Variants } from 'framer-motion';
-import type { ReactNode } from 'react';
-import { EASE, fadeUp, viewportOnce } from '@/lib/motion';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { EASE, fadeUp } from '@/lib/motion';
 import { useReducedMotion } from '@/lib/useReducedMotion';
 
 type ScrollRevealProps = {
@@ -13,6 +13,11 @@ type ScrollRevealProps = {
   as?: 'div' | 'span';
 };
 
+// Framer Motion's own whileInView occasionally never fires — observed on a
+// direct scroll jump / deep link, leaving content permanently at opacity:0.
+// Driving visibility from our own IntersectionObserver (plus a synchronous
+// "already in view" check at mount) mirrors Hero's proven-reliable `animate`
+// pattern instead of trusting whileInView's internal viewport tracking.
 export default function ScrollReveal({
   children,
   className,
@@ -21,13 +26,36 @@ export default function ScrollReveal({
   as = 'div',
 }: ScrollRevealProps) {
   const reduced = useReducedMotion();
+  const ref = useRef<HTMLDivElement & HTMLSpanElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    const alreadyVisible =
+      rect.top < window.innerHeight * 0.9 && rect.bottom > window.innerHeight * 0.1;
+    if (alreadyVisible) {
+      setInView(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '-10% 0px -10% 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const MotionTag = as === 'span' ? motion.span : motion.div;
   const show = variants.show;
-
-  // whileInView stays active unconditionally so content is guaranteed to
-  // reveal once scrolled into view — reduced motion only shortens the
-  // transition rather than gating visibility, so a mistimed preference
-  // check can never leave content permanently hidden.
   const appliedVariants: Variants = {
     hidden: variants.hidden,
     show: {
@@ -43,10 +71,10 @@ export default function ScrollReveal({
 
   return (
     <MotionTag
+      ref={ref}
       className={className}
       initial="hidden"
-      whileInView="show"
-      viewport={viewportOnce}
+      animate={inView ? 'show' : 'hidden'}
       variants={appliedVariants}
     >
       {children}
