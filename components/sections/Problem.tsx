@@ -7,8 +7,11 @@ import { staggerChildren, fadeUp } from '@/lib/motion';
 export default function Problem() {
   return (
     <section className="relative overflow-hidden bg-porcelain">
-      <div className="border-b border-bark/10 py-4">
-        <Marquee items={hero.marquee} textClassName="font-display italic text-3xl text-bark/25 sm:text-4xl" />
+      <div className="border-b border-bark/10 py-5">
+        <Marquee
+          items={hero.marquee.map((item) => item.toUpperCase())}
+          textClassName="font-body font-black uppercase tracking-tight text-3xl text-bark/20 sm:text-4xl"
+        />
       </div>
 
       <div className="container-editorial py-24 sm:py-32">

@@ -8,6 +8,7 @@ import Inclusions from '@/components/sections/Inclusions';
 import MainOffer from '@/components/sections/MainOffer';
 import Outcome from '@/components/sections/Outcome';
 import Problem from '@/components/sections/Problem';
+import QuoteBreak from '@/components/sections/QuoteBreak';
 import SocialProof from '@/components/sections/SocialProof';
 import Transformation from '@/components/sections/Transformation';
 import Footer from '@/components/Footer';
@@ -24,6 +25,7 @@ export default function Home() {
         <Transformation />
         <MainOffer />
         <HowWeWork />
+        <QuoteBreak />
         <Inclusions />
         <Outcome />
         <About />

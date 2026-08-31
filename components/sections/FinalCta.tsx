@@ -24,7 +24,11 @@ export default function FinalCta() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.3} className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Button href="mailto:hello@nalurisocials.com?subject=Application%20%E2%80%94%20Naluri%20Socials">
+          <Button
+            href="mailto:hello@nalurisocials.com?subject=Application%20%E2%80%94%20Naluri%20Socials"
+            variant="pastel"
+            tone="yellow"
+          >
             {finalCta.ctaPrimary}
           </Button>
           <Button

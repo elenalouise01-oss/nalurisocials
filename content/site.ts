@@ -2,7 +2,8 @@
 // updated without touching component code.
 
 export const nav = {
-  logo: 'Naluri',
+  logo: 'naluri',
+  tagline: 'Your Social Media Side Kick',
   links: [
     { label: 'Work With Me', href: '#work-with-me' },
     { label: 'About', href: '#about' },

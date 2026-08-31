@@ -21,7 +21,7 @@ export default function Navigation() {
         <div className="flex w-full max-w-4xl items-center justify-between gap-4 rounded-full bg-bark/95 py-2 pl-2 pr-2 shadow-[0_8px_30px_rgba(59,45,14,0.25)] backdrop-blur-md sm:pl-3">
           <Link
             href="#top"
-            className="font-logo shrink-0 rounded-full bg-cream px-4 py-2 text-lg tracking-wide text-bark sm:text-xl"
+            className="font-logo italic shrink-0 rounded-full bg-cream px-4 py-2 text-lg lowercase tracking-wide text-rose sm:text-xl"
           >
             {nav.logo}
           </Link>

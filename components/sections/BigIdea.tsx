@@ -16,11 +16,11 @@ export default function BigIdea() {
 
         <div className="mt-6 sm:mt-10">
           <ScrollReveal variants={staggerChildren(0.08)}>
-            <h2 className="font-display text-display-1 leading-[0.9] text-cream">
+            <h2 className="font-body text-display-1 font-black uppercase leading-[0.88] tracking-tight text-cream">
               <ScrollReveal as="span" variants={fadeUp} className="block">
                 You are the
               </ScrollReveal>
-              <ScrollReveal as="span" variants={fadeUp} className="block italic text-zing-yellow">
+              <ScrollReveal as="span" variants={fadeUp} className="block text-zing-yellow">
                 content.
               </ScrollReveal>
             </h2>

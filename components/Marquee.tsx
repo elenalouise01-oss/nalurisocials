@@ -11,7 +11,7 @@ export default function Marquee({
   className = '',
   textClassName = '',
   speed = 'normal',
-  separator = '✦',
+  separator = '•',
 }: MarqueeProps) {
   const track = items.join(` ${separator} `) + ` ${separator} `;
 

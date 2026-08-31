@@ -1,3 +1,4 @@
+import ImageCarousel from '@/components/ImageCarousel';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionLabel from '@/components/SectionLabel';
 import { inclusions } from '@/content/site';
@@ -12,9 +13,22 @@ const sizeCycle = [
 
 const colorCycle = ['text-bark', 'text-sage', 'text-bark', 'text-rose', 'text-bark'];
 
+const galleryTones = ['rose', 'sage', 'porcelain', 'sand'] as const;
+const galleryBadges = ['Find Your Voice', 'Build Confidence', 'Stay Consistent'];
+
 export default function Inclusions() {
+  const gallery = inclusions.items.slice(0, 8).map((item, i) => ({
+    title: item,
+    badge: galleryBadges[i % galleryBadges.length],
+    tone: galleryTones[i % galleryTones.length],
+  }));
+
   return (
-    <section className="relative bg-linen py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-linen py-24 sm:py-32">
+      <ScrollReveal className="mb-14 sm:mb-16">
+        <ImageCarousel items={gallery} />
+      </ScrollReveal>
+
       <div className="container-editorial">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <SectionLabel numeral="✦">{inclusions.label}</SectionLabel>
