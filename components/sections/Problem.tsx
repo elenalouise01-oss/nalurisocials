@@ -1,3 +1,4 @@
+import Button from '@/components/Button';
 import Marquee from '@/components/Marquee';
 import ScrollReveal from '@/components/ScrollReveal';
 import SectionLabel from '@/components/SectionLabel';
@@ -18,8 +19,11 @@ export default function Problem() {
         <SectionLabel numeral="✦">The Problem</SectionLabel>
 
         <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-12">
-          <ScrollReveal className="lg:col-span-7">
+          <ScrollReveal className="flex flex-col items-start gap-6 lg:col-span-7">
             <h2 className="font-display text-display-3 leading-[1.02] text-bark">{problem.headline}</h2>
+            <Button href="#work-with-me" variant="pastel" tone="rose">
+              See the fix
+            </Button>
           </ScrollReveal>
           <ScrollReveal delay={0.15} className="flex flex-col justify-end gap-2 lg:col-span-5">
             {problem.intro.map((line) => (
