@@ -4,6 +4,7 @@ import ComingSoon from '@/components/sections/ComingSoon';
 import FinalCta from '@/components/sections/FinalCta';
 import Hero from '@/components/sections/Hero';
 import HowWeWork from '@/components/sections/HowWeWork';
+import ImageGallery from '@/components/sections/ImageGallery';
 import Inclusions from '@/components/sections/Inclusions';
 import MainOffer from '@/components/sections/MainOffer';
 import Outcome from '@/components/sections/Outcome';
@@ -21,12 +22,13 @@ export default function Home() {
       <main>
         <Hero />
         <Problem />
-        <Inclusions />
+        <ImageGallery />
         <BigIdea />
         <Transformation />
         <MainOffer />
         <HowWeWork />
         <QuoteBreak />
+        <Inclusions />
         <Outcome />
         <About />
         <SocialProof />
