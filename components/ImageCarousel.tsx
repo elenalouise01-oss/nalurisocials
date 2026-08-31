@@ -25,13 +25,13 @@ function Card({ item, index }: { item: CarouselItem; index: number }) {
         className="h-full w-full"
         compact
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-bark/80 via-bark/5 to-transparent" />
-      <p className="absolute bottom-6 left-5 right-5 font-body text-lg font-black uppercase leading-tight text-cream">
+      <div className="absolute inset-0 bg-gradient-to-t from-bark/80 via-bark/10 to-bark/10" />
+      <p className="absolute left-5 right-5 top-5 font-body text-lg font-black uppercase leading-tight text-cream">
         {item.title}
       </p>
       {item.badge && (
         <span
-          className={`absolute left-5 top-5 -rotate-6 rounded-full px-3 py-1 font-body text-[0.65rem] font-bold uppercase tracking-wide shadow-sm ${badgeTones[index % badgeTones.length]}`}
+          className={`absolute bottom-5 left-5 rounded-full px-4 py-2 font-body text-[0.68rem] font-bold uppercase tracking-wide shadow-sm ${badgeTones[index % badgeTones.length]}`}
         >
           {item.badge}
         </span>
