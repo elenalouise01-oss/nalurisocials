@@ -1,12 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
+import Logo from '@/components/Logo';
 import { announcement, nav } from '@/content/site';
 
-const logoImgClasses = 'h-6 w-auto shrink-0 brightness-0 invert sm:h-7';
+const logoClasses = 'h-6 w-auto shrink-0 text-cream sm:h-7';
 const ctaClasses =
   'shrink-0 rounded-full bg-zing-yellow px-4 py-2 font-body text-[0.62rem] font-semibold uppercase tracking-widest2 text-bark transition-colors duration-300 hover:bg-cream sm:px-5 sm:text-[0.65rem]';
 
@@ -61,7 +61,7 @@ export default function Navigation() {
             </button>
 
             <Link href="#top" className="justify-self-center">
-              <Image src="/images/logo-naluri.png" alt={nav.logo} width={299} height={109} className={logoImgClasses} priority />
+              <Logo className={logoClasses} />
             </Link>
 
             <Link href="#apply" className={`${ctaClasses} justify-self-end`}>
@@ -72,7 +72,7 @@ export default function Navigation() {
           {/* Desktop: logo — links — CTA */}
           <div className="hidden items-center justify-between gap-4 md:flex">
             <Link href="#top">
-              <Image src="/images/logo-naluri.png" alt={nav.logo} width={299} height={109} className={logoImgClasses} priority />
+              <Logo className={logoClasses} />
             </Link>
 
             <nav className="flex items-center gap-5">

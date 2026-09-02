@@ -1,4 +1,5 @@
-import { footer, nav } from '@/content/site';
+import Logo from '@/components/Logo';
+import { footer } from '@/content/site';
 
 const socialIcons: Record<string, React.ReactNode> = {
   Instagram: (
@@ -35,13 +36,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative mt-16 flex w-full select-none justify-center overflow-hidden sm:mt-20" aria-hidden>
-        <img
-          src="/images/logo-naluri-brown.png"
-          alt=""
-          className="h-auto"
-          style={{ width: 'clamp(280px, 46vw, 760px)' }}
-        />
+      <div className="relative mt-16 flex w-full select-none justify-center overflow-hidden text-bark sm:mt-20" aria-hidden>
+        <Logo className="h-auto" style={{ width: 'clamp(280px, 46vw, 760px)' }} />
       </div>
 
       <div className="flex items-center justify-center gap-3 pb-10">
