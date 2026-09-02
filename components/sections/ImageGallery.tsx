@@ -16,6 +16,7 @@ const galleryPhotos: Record<string, string> = {
   'Co-Creating Content': '/images/gallery/co-creating-content.jpg',
   'Storytelling & Hooks': '/images/gallery/voice-story-discovery.jpg',
   'Camera Confidence': '/images/gallery/camera-confidence.jpg',
+  'Content Creation': '/images/gallery/content-creation.jpg',
 };
 
 export default function ImageGallery() {
