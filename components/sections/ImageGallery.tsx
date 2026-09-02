@@ -9,12 +9,12 @@ const galleryBadges = ['Find Your Voice', 'Build Confidence', 'Stay Consistent']
 // Add an entry here as each photo comes in — falls back to the
 // placeholder gradient for any title not listed.
 const galleryPhotos: Record<string, string> = {
-  'Voice & Story Discovery': '/images/gallery/voice-story-discovery.jpg',
+  'Voice & Story Discovery': '/images/gallery/storytelling-hooks.jpg',
   'Brand Voice & Messaging': '/images/gallery/brand-voice.jpg',
   'Content Strategy': '/images/gallery/content-strategy.jpg',
   'Content Pillars & Ideas': '/images/gallery/content-pillars-ideas.jpg',
   'Co-Creating Content': '/images/gallery/co-creating-content.jpg',
-  'Storytelling & Hooks': '/images/gallery/storytelling-hooks.jpg',
+  'Storytelling & Hooks': '/images/gallery/voice-story-discovery.jpg',
   'Camera Confidence': '/images/gallery/camera-confidence.jpg',
 };
 
