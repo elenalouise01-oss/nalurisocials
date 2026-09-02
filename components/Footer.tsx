@@ -35,13 +35,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="relative mt-16 w-full select-none overflow-hidden text-center sm:mt-20" aria-hidden>
-        <p
-          className="font-logo lowercase leading-none text-bark"
-          style={{ fontSize: 'clamp(6rem, 26vw, 20rem)' }}
-        >
-          {nav.logo}
-        </p>
+      <div className="relative mt-16 flex w-full select-none justify-center overflow-hidden sm:mt-20" aria-hidden>
+        <img
+          src="/images/logo-naluri-brown.png"
+          alt=""
+          className="h-auto"
+          style={{ width: 'clamp(280px, 46vw, 760px)' }}
+        />
       </div>
 
       <div className="flex items-center justify-center gap-3 pb-10">
