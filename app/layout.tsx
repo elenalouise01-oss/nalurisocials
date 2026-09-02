@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Montserrat, Gochi_Hand } from 'next/font/google';
+import { Playfair_Display, Montserrat, Gochi_Hand, Bodoni_Moda } from 'next/font/google';
 import './globals.css';
 
 const playfair = Playfair_Display({
@@ -8,6 +8,16 @@ const playfair = Playfair_Display({
   display: 'swap',
   style: ['normal', 'italic'],
   weight: ['400', '500', '600', '700', '800', '900'],
+});
+
+// Stand-in for the licensed Giaza logo font (not bundled — see
+// public/fonts/README.md) — a high-contrast didone closer to Giaza's
+// bold/thin letterforms than Playfair Display.
+const bodoni = Bodoni_Moda({
+  subsets: ['latin'],
+  variable: '--font-bodoni',
+  display: 'swap',
+  weight: ['600', '700', '800', '900'],
 });
 
 const montserrat = Montserrat({
@@ -60,7 +70,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${montserrat.variable} ${gochi.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${montserrat.variable} ${gochi.variable} ${bodoni.variable}`}>
       <body>{children}</body>
     </html>
   );
