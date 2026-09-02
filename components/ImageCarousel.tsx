@@ -6,6 +6,7 @@ type CarouselItem = {
   title: string;
   badge?: string;
   tone?: Tone;
+  src?: string;
 };
 
 type ImageCarouselProps = {
@@ -19,6 +20,7 @@ function Card({ item, index }: { item: CarouselItem; index: number }) {
   return (
     <div className="relative aspect-[3/4] w-[78vw] max-w-xs flex-none overflow-hidden rounded-2xl sm:w-80">
       <PlaceholderImage
+        src={item.src}
         alt={item.title}
         label={item.title}
         tone={item.tone ?? 'porcelain'}
