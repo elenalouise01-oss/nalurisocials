@@ -44,22 +44,23 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="container-editorial flex flex-col items-center justify-between gap-3 border-t border-bark/10 py-6 sm:flex-row">
+      <div className="flex items-center justify-center gap-3 pb-10">
+        {footer.socials.map((social) => (
+          <a
+            key={social.href}
+            href={social.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={social.label}
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-bark/5 text-bark transition-colors hover:bg-bark hover:text-cream"
+          >
+            {socialIcons[social.label]}
+          </a>
+        ))}
+      </div>
+
+      <div className="container-editorial flex items-center justify-center border-t border-bark/10 py-6">
         <p className="font-body text-xs text-bark/45">{footer.legal}</p>
-        <div className="flex items-center gap-3">
-          {footer.socials.map((social) => (
-            <a
-              key={social.href}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={social.label}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-bark/5 text-bark transition-colors hover:bg-bark hover:text-cream"
-            >
-              {socialIcons[social.label]}
-            </a>
-          ))}
-        </div>
       </div>
     </footer>
   );
