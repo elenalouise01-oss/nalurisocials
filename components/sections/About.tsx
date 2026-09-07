@@ -19,7 +19,6 @@ export default function About() {
                 tone="rose"
                 className="h-full w-full"
                 sizes="(min-width: 1024px) 40vw, 100vw"
-                objectPosition="75% center"
               />
             </div>
             <span

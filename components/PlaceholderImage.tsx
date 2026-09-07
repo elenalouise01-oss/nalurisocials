@@ -11,8 +11,6 @@ type PlaceholderImageProps = {
   priority?: boolean;
   sizes?: string;
   compact?: boolean;
-  objectPosition?: string;
-  quality?: number;
 };
 
 const toneStyles: Record<Tone, string> = {
@@ -40,8 +38,6 @@ export default function PlaceholderImage({
   priority = false,
   sizes = '(min-width: 1024px) 50vw, 100vw',
   compact = false,
-  objectPosition = 'center',
-  quality = 90,
 }: PlaceholderImageProps) {
   if (src) {
     return (
@@ -52,9 +48,7 @@ export default function PlaceholderImage({
           fill
           priority={priority}
           sizes={sizes}
-          quality={quality}
           className="object-cover"
-          style={{ objectPosition }}
         />
       </div>
     );
