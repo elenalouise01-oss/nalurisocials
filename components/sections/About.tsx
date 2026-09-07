@@ -14,10 +14,11 @@ export default function About() {
           <ScrollReveal className="relative order-2 lg:order-1 lg:col-span-5">
             <div className="relative aspect-[4/5] w-full overflow-hidden sm:aspect-[3/4]">
               <PlaceholderImage
+                src="/images/about-elena.jpg"
                 alt="Elena, founder of Naluri Socials"
-                label="Add your portrait here"
                 tone="rose"
                 className="h-full w-full"
+                sizes="(min-width: 1024px) 40vw, 100vw"
               />
             </div>
             <span
