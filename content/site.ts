@@ -2,16 +2,17 @@
 // updated without touching component code.
 
 // Contact & social links — every button and footer link reads from here,
-// so a handle or email only ever needs changing in one place.
+// so a link only ever needs changing in one place.
 export const contact = {
-  email: 'hello@nalurisocials.com',
-  applySubject: 'Application — Naluri Socials',
+  // Paste the application form link here once it exists. Until then,
+  // "Apply Now" opens an Instagram DM instead.
+  applyForm: '',
   instagram: 'https://www.instagram.com/lenainthewild/',
   instagramDm: 'https://ig.me/m/lenainthewild',
   tiktok: 'https://www.tiktok.com/@lenainthewild',
 };
 
-export const applyHref = `mailto:${contact.email}?subject=${encodeURIComponent(contact.applySubject)}`;
+export const applyHref = contact.applyForm || contact.instagramDm;
 
 export const nav = {
   logo: 'naluri',

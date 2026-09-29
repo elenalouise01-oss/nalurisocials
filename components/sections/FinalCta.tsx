@@ -24,20 +24,19 @@ export default function FinalCta() {
         </ScrollReveal>
 
         <ScrollReveal delay={0.3} className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Button
-            href={applyHref}
-            variant="pastel"
-            tone="yellow"
-          >
+          <Button href={applyHref} variant="pastel" tone="yellow">
             {finalCta.ctaPrimary}
           </Button>
-          <Button
-            href={contact.instagramDm}
-            variant="secondary"
-            className="!border-cream/30 !text-cream hover:!bg-cream hover:!text-sage"
-          >
-            {finalCta.ctaSecondary}
-          </Button>
+          {/* Hidden while "Apply Now" itself falls back to the Instagram DM. */}
+          {applyHref !== contact.instagramDm && (
+            <Button
+              href={contact.instagramDm}
+              variant="secondary"
+              className="!border-cream/30 !text-cream hover:!bg-cream hover:!text-sage"
+            >
+              {finalCta.ctaSecondary}
+            </Button>
+          )}
         </ScrollReveal>
 
         <ScrollReveal delay={0.38}>
