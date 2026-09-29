@@ -1,3 +1,4 @@
+import Button from '@/components/Button';
 import ScrollReveal from '@/components/ScrollReveal';
 import { comingSoon } from '@/content/site';
 
@@ -9,8 +10,12 @@ export default function ComingSoon() {
           <p className="font-body text-[0.7rem] font-semibold uppercase tracking-widest2 text-stone">
             {comingSoon.label}
           </p>
+          <p className="font-hand text-2xl text-sage sm:text-3xl">{comingSoon.productName}</p>
           <h2 className="font-display text-3xl italic text-bark/70 sm:text-4xl">{comingSoon.headline}</h2>
           <p className="font-body text-sm leading-relaxed text-bark/50 sm:text-base">{comingSoon.body}</p>
+          <Button href={comingSoon.ctaHref} variant="pastel" tone="sage" className="mt-3">
+            {comingSoon.cta}
+          </Button>
           <span className="mt-1 font-hand text-xl text-stone">{comingSoon.note}</span>
         </ScrollReveal>
       </div>

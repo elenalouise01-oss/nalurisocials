@@ -278,9 +278,12 @@ export const finalCta = {
 
 export const comingSoon = {
   label: 'Coming Soon',
+  productName: 'The Freedom Frequency',
   headline: 'Something for the not-yet-ready-for-1:1 season.',
   body: 'Self-paced resources, digital tools and frameworks designed to help you create more confidently, build better content systems and use AI to streamline your content without losing your voice.',
-  note: 'Not available yet — this is what’s brewing.',
+  note: 'Not available yet — join the waitlist to be first in.',
+  cta: 'Join the Waitlist',
+  ctaHref: 'https://theleap.co/@naluri/email_capture/the-freedom-frequency-your-next-chapter',
 };
 
 export const followUs = {
