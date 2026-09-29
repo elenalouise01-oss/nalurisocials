@@ -6,9 +6,9 @@
 export const contact = {
   email: 'hello@nalurisocials.com',
   applySubject: 'Application — Naluri Socials',
-  instagram: 'https://www.instagram.com/naluri.socials/',
-  instagramDm: 'https://ig.me/m/naluri.socials',
-  tiktok: 'https://www.tiktok.com/@naluri.socials',
+  instagram: 'https://www.instagram.com/lenainthewild/',
+  instagramDm: 'https://ig.me/m/lenainthewild',
+  tiktok: 'https://www.tiktok.com/@lenainthewild',
 };
 
 export const applyHref = `mailto:${contact.email}?subject=${encodeURIComponent(contact.applySubject)}`;
@@ -287,11 +287,11 @@ export const followUs = {
   label: "Let's Stay Connected",
   headline: 'Follow Along',
   items: [
-    { title: 'Behind the scenes of building a voice.', badge: '@naluri.socials', tone: 'sage' },
-    { title: 'Real content, not a performance.', badge: '@naluri.socials', tone: 'rose' },
-    { title: 'Systems that keep you consistent.', badge: '@naluri.socials', tone: 'porcelain' },
-    { title: 'Confidence, one post at a time.', badge: '@naluri.socials', tone: 'sand' },
-    { title: 'What working together actually looks like.', badge: '@naluri.socials', tone: 'bark' },
+    { title: 'Behind the scenes of building a voice.', badge: '@lenainthewild', tone: 'sage' },
+    { title: 'Real content, not a performance.', badge: '@lenainthewild', tone: 'rose' },
+    { title: 'Systems that keep you consistent.', badge: '@lenainthewild', tone: 'porcelain' },
+    { title: 'Confidence, one post at a time.', badge: '@lenainthewild', tone: 'sand' },
+    { title: 'What working together actually looks like.', badge: '@lenainthewild', tone: 'bark' },
   ],
 } as const;
 
