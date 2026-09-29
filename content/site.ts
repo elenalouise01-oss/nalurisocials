@@ -1,6 +1,18 @@
 // All site copy lives here, separated from presentation, so it can be
 // updated without touching component code.
 
+// Contact & social links — every button and footer link reads from here,
+// so a handle or email only ever needs changing in one place.
+export const contact = {
+  email: 'hello@nalurisocials.com',
+  applySubject: 'Application — Naluri Socials',
+  instagram: 'https://www.instagram.com/naluri.socials/',
+  instagramDm: 'https://ig.me/m/naluri.socials',
+  tiktok: 'https://www.tiktok.com/@naluri.socials',
+};
+
+export const applyHref = `mailto:${contact.email}?subject=${encodeURIComponent(contact.applySubject)}`;
+
 export const nav = {
   logo: 'naluri',
   tagline: 'Your Social Media Side Kick',
@@ -289,8 +301,8 @@ export const footer = {
   ctaLabel: 'Ready to talk?',
   cta: 'Apply Now',
   socials: [
-    { label: 'Instagram', href: 'https://instagram.com' },
-    { label: 'TikTok', href: 'https://tiktok.com' },
+    { label: 'Instagram', href: contact.instagram },
+    { label: 'TikTok', href: contact.tiktok },
   ],
   legal: `© ${new Date().getFullYear()} Naluri Socials. All rights reserved.`,
 };

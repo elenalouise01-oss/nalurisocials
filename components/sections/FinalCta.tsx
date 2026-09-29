@@ -1,6 +1,6 @@
 import Button from '@/components/Button';
 import ScrollReveal from '@/components/ScrollReveal';
-import { finalCta } from '@/content/site';
+import { applyHref, contact, finalCta } from '@/content/site';
 
 export default function FinalCta() {
   return (
@@ -25,14 +25,14 @@ export default function FinalCta() {
 
         <ScrollReveal delay={0.3} className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <Button
-            href="mailto:hello@nalurisocials.com?subject=Application%20%E2%80%94%20Naluri%20Socials"
+            href={applyHref}
             variant="pastel"
             tone="yellow"
           >
             {finalCta.ctaPrimary}
           </Button>
           <Button
-            href="https://instagram.com"
+            href={contact.instagramDm}
             variant="secondary"
             className="!border-cream/30 !text-cream hover:!bg-cream hover:!text-sage"
           >

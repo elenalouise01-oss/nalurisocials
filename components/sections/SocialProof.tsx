@@ -48,6 +48,11 @@ export default function SocialProof() {
     el.scrollBy({ left: step * direction, behavior: 'smooth' });
   };
 
+  // Hide the whole section until at least one real testimonial is in
+  // content/site.ts, so placeholder quotes never show on the live site.
+  const realTestimonials = testimonials.filter((t) => !t.placeholder);
+  if (realTestimonials.length === 0) return null;
+
   return (
     <section className="relative overflow-hidden bg-bark py-24 text-cream sm:py-32">
       <div className="container-editorial flex flex-col items-center text-center">
@@ -85,7 +90,7 @@ export default function SocialProof() {
           ref={trackRef}
           className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-2 no-scrollbar"
         >
-          {testimonials.map((testimonial, i) => (
+          {realTestimonials.map((testimonial, i) => (
             <div key={testimonial.name + i} data-card>
               <TestimonialCard testimonial={testimonial} tone={cardTones[i % cardTones.length]} />
             </div>
