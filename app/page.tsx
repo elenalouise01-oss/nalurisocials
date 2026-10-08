@@ -7,6 +7,7 @@ import Hero from '@/components/sections/Hero';
 import HowWeWork from '@/components/sections/HowWeWork';
 import ImageGallery from '@/components/sections/ImageGallery';
 import Inclusions from '@/components/sections/Inclusions';
+import Listen from '@/components/sections/Listen';
 import MainOffer from '@/components/sections/MainOffer';
 import Outcome from '@/components/sections/Outcome';
 import Problem from '@/components/sections/Problem';
@@ -36,6 +37,7 @@ export default function Home() {
         <ComingSoon />
         <FinalCta />
         <FollowUs />
+        <Listen />
       </main>
       <Footer />
     </>

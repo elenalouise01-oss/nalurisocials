@@ -283,6 +283,13 @@ export const followUs = {
   ],
 } as const;
 
+export const listen = {
+  label: 'Press Play',
+  headline: 'Listen In',
+  title: 'Song on Spotify',
+  embedSrc: 'https://open.spotify.com/embed/track/3R1Xa7LkesYpNI3v6fslKi?utm_source=generator&theme=0',
+} as const;
+
 export const footer = {
   label: 'Stay in the loop',
   tagline: 'You are the content.',
