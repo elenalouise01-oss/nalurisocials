@@ -51,6 +51,10 @@ export default function About() {
               <p className="font-body text-base leading-relaxed text-bark/70 sm:text-lg">{about.timeReclaimed}</p>
             </ScrollReveal>
 
+            <ScrollReveal delay={0.19}>
+              <p className="font-body text-base leading-relaxed text-bark/70 sm:text-lg">{about.qualityOverQuantity}</p>
+            </ScrollReveal>
+
             <ScrollReveal delay={0.2} className="border-l-2 border-sage/40 pl-6">
               <PullQuote>{about.pullquote}</PullQuote>
             </ScrollReveal>
