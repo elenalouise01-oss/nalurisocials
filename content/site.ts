@@ -224,6 +224,8 @@ export const about = {
   ],
   shift:
     'Everything shifted when I stopped chasing the algorithm and started speaking directly to one person. I got clear, showed my real life, shared my truth — and started attracting people who actually resonated.',
+  timeReclaimed:
+    'I used to spend 5 to 10+ hours editing every reel from scratch in CapCut. Now I work on my business while that editing happens in the background — and that reclaimed time has changed everything.',
   pullquote: 'I posted less. Worked less. And built more.',
   closing: [
     'That’s what I want for you too.',
